@@ -7,6 +7,7 @@ function Room() {
     //console.log("State = ",state);
     let [isLit, setLit] = useState(false);
     let [age , setAge] = useState(24);
+    let [temp , setTemp] = useState(22);
     
     //let hello = 'Hello '+ isLit +'World';
     //let hello = `Hello ${isLit} World`;
@@ -17,13 +18,37 @@ function Room() {
         <br/>
         Age: {age}
         <br/>
-        <button onClick={()=> setLit(!isLit) } >Toggle Light</button>
-        <br/>
         <button onClick={ ()=> {
                         console.log("Increase age arrow function");
                         setAge(++age);
                         }}>
             Increase Age
+        </button>
+        <br/>
+        <button onClick={()=> setLit(!isLit) } >Toggle Light</button>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <button onClick={()=> setLit(true) } >Light On</button>
+        <button onClick={()=> setLit(false) } >Light Off</button>
+        <br/>
+        Light is {isLit ? "On" : "Off"}
+        <br/>
+        Temperature: {temp} °C
+        <br/>
+   
+        <button onClick={ ()=> {
+                        console.log("Increase Temperature");
+                        setTemp(++temp);
+                        }}>
+            Increase Temperature
+        </button>
+        <button onClick={ ()=> {
+                        console.log("Decrease Temperature");
+                        setTemp(--temp);
+                        }}>
+            Decrease Temperature
         </button>
     </div>
     );
